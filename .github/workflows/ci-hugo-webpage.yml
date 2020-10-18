@@ -43,3 +43,9 @@ jobs:
   
   #test:
   #merge:
+    
+     # Runs a set of commands using the runners shell
+      - name: TEST FROM DIRECT MASTER - Run a multi-line script
+        run: |
+          echo TEST FROM DIRECT MASTER,
+          echo hope it works.. .
