@@ -5,8 +5,8 @@ name: CI-hugo-webpage
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  push:
-    branches: [ master ]
+  #push:
+  #  branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -25,12 +25,24 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+        
+      - name: Check public folder is empty
+        run: ls -larth public
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: TEST from BRANCH in PR - Run a multi-line script
         run: |
-          echo Add other actions to build,
+          echo Add other actions to build in THIS NEW TESTING BRANCH,
           echo test, and deploy your project.
+      
+      - name: Build hugo webpage
+        uses: klakegg/actions-hugo@1.0.0
+      
+      - name: Check static files has been generated in public folder
+        run: ls -larth public
+  
+  #test:
+  #merge:
     
      # Runs a set of commands using the runners shell
       - name: TEST FROM DIRECT MASTER - Run a multi-line script
