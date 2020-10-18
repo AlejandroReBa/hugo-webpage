@@ -36,4 +36,4 @@ jobs:
       - name: TEST FROM DIRECT MASTER - Run a multi-line script
         run: |
           echo TEST FROM DIRECT MASTER,
-          echo hope it works :) .
+          echo hope it works.. .
